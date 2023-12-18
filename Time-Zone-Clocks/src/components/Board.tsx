@@ -10,10 +10,12 @@ interface BoardProps {
 
 const Board: React.FC<BoardProps> = ({ clockConfigs }) => {
     return(
-        <div>
-            {clockConfigs.map((config, index) => {
-              <Clock key = {index} timeZone = {config.timeZone} location {config.location} />
+        <div key = {index} >
+            {clockConfigs.map((config, index): React.ReactNode => {
+              <Clock timeZone = {config.timeZone} location ={config.location} />;
             })}
         </div>
-    )
-}
+    );
+};
+
+export default Board
