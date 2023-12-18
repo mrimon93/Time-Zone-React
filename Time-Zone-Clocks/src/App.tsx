@@ -1,6 +1,7 @@
+// App.tsx
+
+import React from 'react';
 import Board from './components/Board';
-import Clock from './components/Clock';
-import './App.css'
 
 const App: React.FC = () => {
   const clockConfigs = [
@@ -18,4 +19,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App
+export default App;

@@ -1,21 +1,20 @@
-import React from 'react'
-import Clock from './Clock'
+import React from 'react';
+import Clock from './Clock';
 
 interface BoardProps {
-    clockConfigs: {
-        timeZone: string;
-        location: string;
-    }[];
+  clockConfigs: { timezone: string; location: string }[];
 }
 
 const Board: React.FC<BoardProps> = ({ clockConfigs }) => {
-    return(
-        <div key = {index} >
-            {clockConfigs.map((config, index): React.ReactNode => {
-              <Clock timeZone = {config.timeZone} location ={config.location} />;
-            })}
+  return (
+    <div>
+      {clockConfigs.map(({ timezone, location }, index): React.ReactNode => (
+        <div key={index}>
+          <Clock timezone={timezone} location={location} />
         </div>
-    );
+      ))}
+    </div>
+  );
 };
 
-export default Board
+export default Board;
